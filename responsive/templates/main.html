@@ -1,0 +1,37 @@
+<ul>
+	<li ng-repeat="mail in emails">
+		<div ng-show="!mail.showActions" ng-swipe-right="mail.showActions=true" class="sample-show-hide">
+			<div class="from">
+				From <span>{{mail.from}}</span>
+			</div>
+
+			<div class="body">
+				{{mail.body}}
+			</div>
+		</div>
+
+		<div ng-show="mail.showActions" ng-swipe-left="mail.showActions=false" class="sample-show-hide">
+			<ul class="actions">
+				<li>
+					<button>Archive</button>
+				</li>
+				<li>
+					<button>Trash</button>
+				</li>
+			</ul>
+		</div>
+	</li>
+</ul>
+
+<div id="photowrapper">
+	<div class="cardProps" hm-double-tap="tapped($event)">
+		<div class="tradingcard">
+			<div class="thumbnail thumbnail-green"></div>
+			<span>Ari</span>
+		</div>
+		<div class="tradingcard">
+			<div class="thumbnail thumbnail-blue"></div>
+			<span>Nate</span>
+		</div>
+	</div>
+</div>

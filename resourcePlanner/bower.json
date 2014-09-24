@@ -1,0 +1,25 @@
+{
+  "name": "resourcePlanner",
+  "version": "0.0.0",
+  "homepage": "https://github.com/AntonNarkevich/learningAngular",
+  "authors": [
+    "AntonNarkevich <17140th@gmail.com>"
+  ],
+  "description": "Learning angular project",
+  "main": "app.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.25",
+    "bootstrap": "~3.2.0",
+    "jQuery": "~2.1.1",
+    "underscore": "~1.7.0"
+  }
+}

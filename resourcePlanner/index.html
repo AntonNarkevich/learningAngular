@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html data-ng-app="rpApp">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Resource planner</title>
+
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body data-ng-controller="MainController">
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/underscore/underscore.js"></script>
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/controllers/mainController.js"></script>
+<script src="/directives/incrementButton.js"></script>
+<script src="/directives/well.js"></script>
+<script src="/directives/collapsible.js"></script>
+<script src="/app.js"></script>
+
+<span data-ng-bind="mainVar"></span>
+
+<div data-increment-button data-start-value="2" data-output="logIt(value)"></div>
+
+<hr/>
+
+<div data-collapsible>
+<span data-well>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eius eos explicabo id impedit in maiores natus officia quae quaerat quidem quisquam rem saepe, sunt suscipit tempora totam unde voluptatum.
+	<increment-button></increment-button>
+</span>
+</div>
+
+
+</body>
+</html>

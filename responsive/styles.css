@@ -1,0 +1,27 @@
+.sample-show-hide {
+  opacity: 1;
+}
+.sample-show-hide {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+.sample-show-hide.ng-hide {
+  opacity: 0;
+}
+.sample-show-hide.ng-hide-active {
+  position: absolute;
+}
+.tradingcard {
+  display: inline-block;
+  margin: 20px;
+}
+.thumbnail {
+  width: 100px;
+  height: 100px;
+}
+.thumbnail-green {
+  background: #5d8055;
+}
+.thumbnail-blue {
+  background: #8f6dff;
+}
