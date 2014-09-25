@@ -5,15 +5,21 @@
 	<title>Resource planner</title>
 
 	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css"/>
+	<link rel="stylesheet" href="/directives/loadingButton.css"/>
+	<link rel="stylesheet" href="/directives/urlList.css"/>
 </head>
 <body data-ng-controller="MainController">
 <script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/underscore/underscore.js"></script>
+<script src="/util/mixins.js"></script>
 <script src="/bower_components/angular/angular.js"></script>
 <script src="/controllers/mainController.js"></script>
 <script src="/directives/incrementButton.js"></script>
 <script src="/directives/well.js"></script>
 <script src="/directives/collapsible.js"></script>
+<script src="/directives/loadingButton.js"></script>
+<script src="/directives/urlList.js"></script>
+<script src="/directives/urlInfo.js"></script>
 <script src="/app.js"></script>
 
 <span data-ng-bind="mainVar"></span>
@@ -29,6 +35,11 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eius eos explic
 </span>
 </div>
 
+<loading-button data-progress-function="sampleLoading" data-on-complete="logThatLoaded" data-reset-delay="500"></loading-button>
+
+<hr/>
+
+<url-list></url-list>
 
 </body>
 </html>

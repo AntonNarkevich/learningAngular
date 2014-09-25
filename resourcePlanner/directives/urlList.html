@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="col-xs-3">
+		<input class="url-list-url form-control" data-ng-model="newUrl" name="url" type="text" placeholder="Input url"/>
+	</div>
+	<div class="col-xs-9">
+		<loading-button data-progress-function="loadUrl" data-reset-delay="800"></loading-button>
+	</div>
+</div>
+
+<div class="row url-list-items">
+	<div class="col-xs-3">
+		<ul class="list-group">
+			<url-info data-ng-repeat="urlInfo in urls"></url-info>
+		</ul>
+	</div>
+</div>
+
