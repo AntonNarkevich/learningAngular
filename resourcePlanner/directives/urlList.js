@@ -7,7 +7,6 @@
 			return {
 				restrict: 'AE',
 				scope: {
-
 				},
 				controller: function ($scope) {
 					var ctrl = this;
@@ -57,7 +56,9 @@
 							.error(function () {
 								urlInfo.isAccessible = false;
 								clearTimeout(timeoutTimer);
-								tickCb(100);
+								$timeout(function() {
+									tickCb(100);
+								});
 							})
 							.finally(function () {
 								completeCb();
