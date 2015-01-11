@@ -46,34 +46,40 @@
 
 						var timeoutTimer;
 
-						$http({method: 'GET',
+						$http({method: 'HEAD',
 							url: scope.newUrl,
 							timeout: abort.promise
 						})
 							.success(function () {
-								urlInfo.isAccessible = true;
-							})
+                                $timeout(function() {
+                                    tickCb(100);
+                                });
+                                urlInfo.isAccessible = true;
+
+                            })
 							.error(function () {
-								urlInfo.isAccessible = false;
-								clearTimeout(timeoutTimer);
-								$timeout(function() {
-									tickCb(100);
-								});
-							})
+                                urlInfo.isAccessible = false;
+
+                            })
 							.finally(function () {
-								completeCb();
-							});
+                                $timeout(function() {
+//                                    tickCb(100);
+                                    clearTimeout(timeoutTimer);
+                                    completeCb();
+                                    console.log('complete cb has been called');
+                                });
+                            });
 
 						var timeout = 1000;
 						var tickCount = 10;
 						(function wait(i) {
-							if (i > tickCount) {
+							if (i > tickCount - 1) {
 								abortRequest();
-								completeCb();
 								return;
 							}
 
 							timeoutTimer = setTimeout(function () {
+                                console.log('Tick callback has been called.');
 								tickCb(_.toPercent(i / 5));
 								wait(i + 1);
 							}, timeout / tickCount);

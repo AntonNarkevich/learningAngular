@@ -7,31 +7,18 @@
 	module.directive('incrementButton', function () {
 		return {
 			scope: {
-				startValue: '@startValue',
-				output: '&'
+				value: '='
 			},
 			templateUrl: '/directives/incrementButton.html',
 			restrict: 'AE',
-			link: function (scope, elem, attrs) {
-				scope.startValue = +scope.startValue || 0;
-				scope.value = scope.startValue;
-
+			link: function (scope, element, attrs) {
 				scope.increaseValue = function () {
 					scope.value += 1;
 				};
 
 				scope.outputValue = function () {
-					scope.output({value: scope.value});
+					window.alert(scope.value);
 				};
-
-				var setAttribute = function () {
-					attrs.$set('data-value', scope.value);
-				};
-
-				setAttribute();
-				scope.$watch('value', setAttribute);
-
-				var button = elem.find('button:first-child');
 			}
 		};
 	});
