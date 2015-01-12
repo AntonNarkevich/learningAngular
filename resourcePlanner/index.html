@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html data-ng-app="rpApp">
 <head lang="en">
-	<meta charset="UTF-8">
-	<title>Resource planner</title>
+    <meta charset="UTF-8">
+    <title>Resource planner</title>
 
-	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css"/>
-	<link rel="stylesheet" href="/directives/loadingButton.css"/>
-	<link rel="stylesheet" href="/directives/urlList.css"/>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/directives/loadingButton.css"/>
+    <link rel="stylesheet" href="/directives/urlList.css"/>
 </head>
 <body data-ng-controller="MainController">
 <script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/underscore/underscore.js"></script>
 <script src="/util/mixins.js"></script>
 <script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-resource/angular-resource.js"></script>
 <script src="/controllers/mainController.js"></script>
 <script src="/directives/incrementButton.js"></script>
 <script src="/directives/well.js"></script>
@@ -21,9 +22,17 @@
 <script src="/directives/urlList.js"></script>
 <script src="/directives/urlInfo.js"></script>
 <script src="/filters/iconName.js"></script>
+<script src="/resources/url.js"></script>
 <script src="/app.js"></script>
 
-<div data-url-list="urlInfoArray"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Links</h1>
+            <div data-url-list="urlInfoArray"></div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

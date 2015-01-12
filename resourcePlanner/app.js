@@ -1,7 +1,7 @@
 /*global jQuery, angular, _*/
 'use strict';
 
-var myApp = angular.module('rpApp', ['rpControllers', 'rpDirectives']);
+var myApp = angular.module('rpApp', ['ngResource', 'rpControllers', 'rpDirectives', 'rpResources']);
 
 myApp.config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.useXDomain = true;

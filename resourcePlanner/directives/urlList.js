@@ -3,7 +3,7 @@
 	'use strict';
 
 	angular.module('rpDirectives')
-		.directive('urlList', function ($http, $q, $timeout) {
+		.directive('urlList', function ($http, $q, $timeout, Url) {
 			return {
 				restrict: 'AE',
 				scope: {
@@ -11,10 +11,15 @@
 				},
 				templateUrl: '/directives/urlList.html',
 				link: function (scope, elem, attrs, ctrl) {
+					Url.checkValidity({url: 'http://google.com'}, function () {
+						console.log(arguments);
+						debugger;
+					});
+
 					scope.addUrl = function (newUrlInfo) {
 						var doesAlreadyExist = _(scope.urlList).some(function (urlInfo) {
-								return urlInfo.url === newUrlInfo.url;
-							});
+							return urlInfo.url === newUrlInfo.url;
+						});
 
 						if (!doesAlreadyExist) {
 							scope.urlList.push(newUrlInfo);
@@ -52,7 +57,7 @@
 						}(0));
 					};
 
-					scope.clearNewUrl = function() {
+					scope.clearNewUrl = function () {
 						scope.newUrl = undefined;
 					};
 				}
