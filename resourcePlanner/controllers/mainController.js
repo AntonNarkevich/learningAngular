@@ -4,7 +4,7 @@
 
 	var module = angular.module('rpControllers', []);
 
-	module.controller('MainController', function ($scope, $timeout) {
+	module.controller('MainController', function ($scope) {
 		$scope.mainVar = 'What is love?';
 
 		$scope.logIt = function (value) {
@@ -26,18 +26,16 @@
 
 			(function wait(intervalIndex) {
 				if (intervalIndex >= intervalCount) {
-                    $timeout(completeCb);
+					setTimeout(completeCb);
 
 					return;
 				}
 
 				var timeToWait = timeIntervals[intervalIndex];
 
-				$timeout(function () {
+				setTimeout(function () {
 					elapsedTime += timeToWait;
 					tickCb(_.toPercent(elapsedTime / totalTime));
-
-                    //Recursive call with increased counter.
 					wait(intervalIndex + 1);
 				}, timeToWait);
 			}(0));
@@ -47,11 +45,23 @@
 			console.log('The button has been loaded.');
 		};
 
-		$scope.isFirstContentVisible = false;
-
-		$scope.incObj = {
-			value: 5
+		$scope.singleUrlInfo = {
+			url: 'http://oz.by/',
+			status: 'ok'
 		};
+
+		$scope.urlInfoArray = [
+			{
+				url: 'http://oz.by/',
+				status: 'ok'
+			}, {
+				url: 'http://google.com/',
+				status: 'loading'
+			}, {
+				url: 'http://amazon.com/',
+				status: 'err'
+			}
+		];
 	});
 }());
 
