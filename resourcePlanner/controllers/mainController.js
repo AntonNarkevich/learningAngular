@@ -4,7 +4,7 @@
 
 	var module = angular.module('rpControllers', []);
 
-	module.controller('MainController', function ($scope) {
+	module.controller('MainController', function ($scope, $timeout) {
 		$scope.mainVar = 'What is love?';
 
 		$scope.logIt = function (value) {
@@ -33,7 +33,7 @@
 
 				var timeToWait = timeIntervals[intervalIndex];
 
-				setTimeout(function () {
+				$timeout(function () {
 					elapsedTime += timeToWait;
 					tickCb(_.toPercent(elapsedTime / totalTime));
 					wait(intervalIndex + 1);
@@ -62,6 +62,12 @@
 				status: 'err'
 			}
 		];
+
+		$scope.incObj = {
+			value: 3
+		};
+
+		$scope.isFirstContentVisible = true;
 	});
 }());
 

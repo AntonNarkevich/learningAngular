@@ -32,7 +32,6 @@
 					var adjustDimmerWidth = function () {
 						var dimmer = element.find('.loading-button-dimmer');
 						var cssRight = (100 - scope.loadingPercent) + '%';
-
 						dimmer.css('right', cssRight);
 					};
 

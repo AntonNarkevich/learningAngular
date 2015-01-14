@@ -6,9 +6,7 @@
 				restrict: 'AE',
 				transclude: true,
 				templateUrl: '/directives/collapsible.html',
-				scope: {
-					isContentVisible: "="
-				},
+
 				link: function (scope, element, attrs) {
 					scope.toggleContent = function () {
 						scope.isContentVisible = !scope.isContentVisible;
