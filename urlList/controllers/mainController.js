@@ -52,14 +52,16 @@
 
 		$scope.urlInfoArray = [
 			{
-				url: 'http://oz.by/',
-				status: 'ok'
-			}, {
-				url: 'http://google.com/',
-				status: 'loading'
-			}, {
-				url: 'http://amazon.com/',
-				status: 'err'
+				url: 'http://oz.by/'
+			},
+			{
+				url: 'http://google.com/'
+			},
+			{
+				url: 'http://amazon.com/'
+			},
+			{
+				url: 'http:whatislove'
 			}
 		];
 

@@ -12,6 +12,19 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
+app.use(function(req, res, next) {
+	console.log('Setting headers');
+	// Website you wish to allow to connect
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	// Request methods you wish to allow
+	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+	// Request headers you wish to allow
+	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+	return next();
+});
+
 app.post('/', function(req, res){
 	var targetUrl = req.body.url;
 
@@ -23,12 +36,7 @@ app.post('/', function(req, res){
 
 		var status = err ? 'err' : 'ok';
 
-		// Website you wish to allow to connect
-		res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
-		// Request methods you wish to allow
-		res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-		// Request headers you wish to allow
-		res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
 
 		res.json({
 			url: targetUrl,
